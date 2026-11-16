@@ -5,10 +5,9 @@ try {
     let index = fs.readFileSync('index.html', 'utf8');
     const indexNavRegex = /<ul class="nav-list">[\s\S]*?<\/ul>/;
     const newIndexNav = `<ul class="nav-list">
-                    <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+                    <li><a href="https://matiascalero.github.io/home/home" class="active" aria-current="page">Inicio</a></li>
                     <li><a href="recursos.html">Recursos</a></li>
                     <li><a href="bomberos.html">Bomberos</a></li>
-                    <li><a href="#convocatorias">Convocatorias</a></li>
                 </ul>`;
     index = index.replace(indexNavRegex, newIndexNav);
     fs.writeFileSync('index.html', index);
@@ -20,10 +19,9 @@ try {
     bomberos = bomberos.replace('<meta name="description" content="Recursos de Economía - Matias Calero" />', '<meta name="description" content="Bomberos - Matias Calero" />');
     
     const bomberosNav = `<ul class="nav-list">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="https://matiascalero.github.io/home/home">Inicio</a></li>
                     <li><a href="recursos.html">Recursos</a></li>
                     <li><a href="bomberos.html" class="active">Bomberos</a></li>
-                    <li><a href="#convocatorias">Convocatorias</a></li>
                 </ul>`;
     bomberos = bomberos.replace(/<ul class="nav-list">[\s\S]*?<\/ul>/, bomberosNav);
 
@@ -51,10 +49,9 @@ try {
     // 3. RECURSOS.HTML
     let recursos = fs.readFileSync('recursos.html', 'utf8');
     const recursosNav = `<ul class="nav-list">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="https://matiascalero.github.io/home/home">Inicio</a></li>
                     <li><a href="recursos.html" class="active">Recursos</a></li>
                     <li><a href="bomberos.html">Bomberos</a></li>
-                    <li><a href="#convocatorias">Convocatorias</a></li>
                 </ul>`;
     recursos = recursos.replace(/<ul class="nav-list">[\s\S]*?<\/ul>/, recursosNav);
     

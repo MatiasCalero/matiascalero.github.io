@@ -13,8 +13,8 @@ def update_file(filename, updates):
 # 1. Update index.html
 update_file('index.html', [
     (
-        '<ul class="nav-list">\n                    <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>\n                    <li><a href="recursos.html">Recursos</a></li>\n                    <li><a href="#convocatorias">Convocatorias</a></li>\n                </ul>',
-        '<ul class="nav-list">\n                    <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>\n                    <li><a href="recursos.html">Recursos</a></li>\n                    <li><a href="bomberos.html">Bomberos</a></li>\n                    <li><a href="#convocatorias">Convocatorias</a></li>\n                </ul>'
+        '<ul class="nav-list">\n                    <li><a href="https://matiascalero.github.io/home/home" class="active" aria-current="page">Inicio</a></li>\n                    <li><a href="recursos.html">Recursos</a></li>\n                </ul>',
+        '<ul class="nav-list">\n                    <li><a href="https://matiascalero.github.io/home/home" class="active" aria-current="page">Inicio</a></li>\n                    <li><a href="recursos.html">Recursos</a></li>\n                    <li><a href="bomberos.html">Bomberos</a></li>\n                </ul>'
     )
 ])
 print("Updated index.html")
@@ -28,10 +28,9 @@ bomberos = bomberos.replace('<meta name="description" content="Recursos de Econo
 
 old_nav = r'<ul class="nav-list">[\s\S]*?</ul>'
 new_nav = '''<ul class="nav-list">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="https://matiascalero.github.io/home/home">Inicio</a></li>
                     <li><a href="recursos.html">Recursos</a></li>
                     <li><a href="bomberos.html" class="active">Bomberos</a></li>
-                    <li><a href="#convocatorias">Convocatorias</a></li>
                 </ul>'''
 bomberos = re.sub(old_nav, new_nav, bomberos)
 
@@ -64,10 +63,9 @@ with open('recursos.html', 'r', encoding='utf-8') as f:
     recursos = f.read()
 
 recursos_nav_new = '''<ul class="nav-list">
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="https://matiascalero.github.io/home/home">Inicio</a></li>
                     <li><a href="recursos.html" class="active">Recursos</a></li>
                     <li><a href="bomberos.html">Bomberos</a></li>
-                    <li><a href="#convocatorias">Convocatorias</a></li>
                 </ul>'''
 recursos = re.sub(old_nav, recursos_nav_new, recursos)
 
@@ -90,4 +88,3 @@ if match_start and match_end:
 with open('recursos.html', 'w', encoding='utf-8') as f:
     f.write(recursos)
 print("Updated recursos.html")
-
