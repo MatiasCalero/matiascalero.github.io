@@ -231,7 +231,7 @@ BALOTARIOS_DATA['balo1'] = {
     [71, 'bomberil', 'Nombres y fechas de las cinco primeras compañías.', '1. Unión Chalaca N°1 — 5 dic. 1860 | 2. Roma N°2 — 15 abr. 1866 | 3. France N°3 — 20 abr. 1866 | 4. Lima N°4 — 21 abr. 1866 | 5. Italia N°5 — 28 oct. 1868.'],
     [72, 'bomberil', '¿Quiénes son los 13 Garibaldinos, fecha y compañía?', '13 bomberos de la Compañía Garibaldi, inmolados el 13 de enero de 1881.'],
     [73, 'bomberil', 'Héroes de Plumereros — quiénes eran, compañía y fecha.', 'Bomberos inmolados el 14 de febrero de 1931.'],
-    [74, 'bomberil', 'Nombre completo del primer Héroe del CGBVP y lugar y fecha de muerte.', 'José Antonio Alarco Espinosa. Falleció en el Combate del 2 de Mayo, en la Torre de La Merced (Lima).'],
+    [74, 'bomberil', 'Nombre completo del primer Héroe del CGBVP y lugar y fecha de muerte.', 'Juan Antonio Alarco Espinosa. Falleció en el Combate del 2 de Mayo, en la Torre de La Merced (Lima).'],
     [107, 'bomberil', 'Fecha de inmolación de Adolfo King.', 'Consultar fuentes institucionales del CGBVP.'],
     [24, 'inst', 'Nombre del Intendente Nacional de Bomberos del Perú.', 'Luis Antonio Ponce de la Jara. ⚠️ Verificar vigencia.'],
     [75, 'inst', '¿Qué es Mística en el CGBVP?', 'El espíritu de cuerpo, identidad, valores y cultura institucional que une y motiva a los bomberos voluntarios.'],
