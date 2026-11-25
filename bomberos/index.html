@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,7 @@
         href="https://raw.githubusercontent.com/MatiasCalero/home/refs/heads/main/images/Logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Bomberos - Matias Calero" />
+    <meta property="og:image" content="https://github.com/MatiasCalero/matiascalero.github.io/blob/main/images/preview.jpeg" />
     <title>Bomberos — Matias Calero</title>
 
     <link rel="stylesheet" href="/style.css">
@@ -30,11 +31,6 @@
         } else {
             applyTitleStyles();
         }
-
-        (function () {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        })();
     </script>
 
     
@@ -45,28 +41,16 @@
 <body>
 
     <header class="header-vertical">
-        <a href="https://matiascalero.github.io" class="logo-mc">mc</a>
+        <a href="/" class="logo-mc">mc</a>
 
         <div class="header-controls">
             <nav id="navMenu">
                 <ul class="nav-list">
-                    <li><a href="https://matiascalero.github.io">Inicio</a></li>
-                    <li><a href="recursos.html">Recursos</a></li>
-                    <li><a href="https://matiascalero.github.io/bomberos/" class="active">Bomberos</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/recursos.html">Recursos</a></li>
+                    <li><a href="/bomberos/" class="active">Bomberos</a></li>
                 </ul>
             </nav>
-
-            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-                <svg class="icon-sun" viewBox="0 0 24 24">
-                    <path
-                        d="M12 4V2M12 20V22M4 12H2M22 12H20M17.65 6.35L19.06 4.94M6.34 17.66L4.93 19.07M17.65 17.66L19.06 19.07M6.34 6.35L4.93 4.94M12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17Z"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <svg class="icon-moon" viewBox="0 0 24 24">
-                    <path
-                        d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
-                </svg>
-            </button>
 
             <button class="hamburger" id="hamb"><span></span><span></span><span></span></button>
         </div>
@@ -86,27 +70,536 @@
                 <div class="bs-header">
                     <h2>Índice</h2>
                 </div>
-                <ul class="bs-nav" role="tablist">
-                    <li><button class="bs-nav-btn bs-active" onclick="switchBsTab('formacion')" id="bstab-formacion">
-                            Formación ESBAS</button></li>
-                    <li><button class="bs-nav-btn" onclick="switchBsTab('equipamiento')" id="bstab-equipamiento">
-                            Unidades y Equipos</button></li>
-                    <li><button class="bs-nav-btn" onclick="switchBsTab('codigos')" id="bstab-codigos"> Códigos
-                            CGBVP</button></li>
-                    <li><button class="bs-nav-btn" onclick="switchBsTab('balotarios')" id="bstab-balotarios"> Balotarios
-                            ESBAS</button></li>
-                    <li><button class="bs-nav-btn" onclick="switchBsTab('biblioteca')" id="bstab-biblioteca">
-                            Biblioteca</button></li>
-                </ul>
+                <nav class="bs-nav-tree" aria-label="Navegación de Bomberos">
+                    <div class="bs-nav-group bs-group-open" id="bsgroup-operaciones">
+                        <button type="button" class="bs-group-toggle" onclick="toggleNavGroup('bsgroup-operaciones')" aria-expanded="true" aria-controls="bsgroup-operaciones-list">
+                            <span>Operaciones</span>
+                            <svg class="bs-group-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <ul class="bs-nav bs-subnav" id="bsgroup-operaciones-list" role="tablist">
+                            <li><button class="bs-nav-btn bs-active" onclick="switchBsTab('accesos')" id="bstab-accesos">
+                                    <span>Accesos Rápidos</span><span class="bs-nav-count">6</span></button></li>
+                            <li><button class="bs-nav-btn" onclick="switchBsTab('herramientas')" id="bstab-herramientas">
+                                    <span>Herramientas</span><span class="bs-nav-count">3</span></button></li>
+                            <li><button class="bs-nav-btn" onclick="switchBsTab('codigos')" id="bstab-codigos">
+                                    <span>Códigos CGBVP</span><span class="bs-nav-count">144</span></button></li>
+                        </ul>
+                    </div>
+
+                    <div class="bs-nav-group bs-group-open" id="bsgroup-estudio">
+                        <button type="button" class="bs-group-toggle" onclick="toggleNavGroup('bsgroup-estudio')" aria-expanded="true" aria-controls="bsgroup-estudio-list">
+                            <span>Formación ESBAS</span>
+                            <svg class="bs-group-chevron" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <ul class="bs-nav bs-subnav" id="bsgroup-estudio-list" role="tablist">
+                            <li><button class="bs-nav-btn" onclick="switchBsTab('formacion')" id="bstab-formacion">
+                                    <span>Lecciones</span><span class="bs-nav-count">34</span></button></li>
+                            <li><button class="bs-nav-btn" onclick="switchBsTab('balotarios')" id="bstab-balotarios">
+                                    <span>Balotarios</span></button></li>
+                            <li><button class="bs-nav-btn" onclick="switchBsTab('biblioteca')" id="bstab-biblioteca">
+                                    <span>Biblioteca</span><span class="bs-nav-count">7</span></button></li>
+                        </ul>
+                    </div>
+                </nav>
             </aside>
 
             <!-- CONTENT -->
             <div class="bomberos-content">
 
-                <!-- 1. Formación ESBAS -->
-                <div class="bs-panel bs-panel-active" id="bspanel-formacion">
+                <!-- 1. Accesos Rápidos -->
+                <div class="bs-panel bs-panel-active" id="bspanel-accesos">
                     <div class="bs-panel-header">
-                        <h3> Formación ESBAS</h3>
+                        <h3>Accesos Rápidos</h3>
+                        <p>Portales operativos y consultas directas en guardia.</p>
+                    </div>
+
+                    <div class="bs-launcher-stack">
+                        <section class="bs-launcher-group">
+                            <h4 class="bs-launcher-title">Operaciones CGBVP</h4>
+                            <div class="bs-quick-grid">
+                                <a href="https://sgonorte.bomberosperu.gob.pe/24horas" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
+                                    <div>
+                                        <span class="bs-quick-title">Emergencias 24H</span>
+                                        <span class="bs-quick-meta">SGO Norte</span>
+                                    </div>
+                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                </a>
+                                <a href="https://www.bomberosperu.gob.pe/sgo/ceem/SGO_CEEM_CDVehiculos.asp" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
+                                    <div>
+                                        <span class="bs-quick-title">Unidades en Servicio</span>
+                                        <span class="bs-quick-meta">Disponibilidad CEEM</span>
+                                    </div>
+                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="bs-launcher-group">
+                            <h4 class="bs-launcher-title">Consultas Ciudadano y Vehículo</h4>
+                            <div class="bs-quick-grid">
+                                <a href="https://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
+                                    <div>
+                                        <span class="bs-quick-title">SIS</span>
+                                        <span class="bs-quick-meta">Afiliación por DNI</span>
+                                    </div>
+                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                </a>
+                                <a href="https://dondemeatiendo.essalud.gob.pe/" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
+                                    <div>
+                                        <span class="bs-quick-title">EsSalud</span>
+                                        <span class="bs-quick-meta">Dónde me atiendo</span>
+                                    </div>
+                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                </a>
+                                <a href="https://www.apeseg.org.pe/consultas-soat/" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
+                                    <div>
+                                        <span class="bs-quick-title">SOAT</span>
+                                        <span class="bs-quick-meta">APESEG · Por placa</span>
+                                    </div>
+                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                </a>
+                                <a href="https://consultavehicular.sunarp.gob.pe/" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
+                                    <div>
+                                        <span class="bs-quick-title">Consulta Vehicular</span>
+                                        <span class="bs-quick-meta">SUNARP · Por placa</span>
+                                    </div>
+                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- 2. Herramientas -->
+                <div class="bs-panel" id="bspanel-herramientas">
+                    <div class="bs-panel-header">
+                        <h3>Herramientas</h3>
+                        <p>Utilidades prácticas de apoyo para guardia, atención prehospitalaria y cálculo rápido.</p>
+                    </div>
+                    <div class="bs-cards-grid">
+                        <a href="#" class="bs-card" onclick="switchBsTab('tool-glasgow'); return false;">
+                            <span class="bs-card-title">Escala de Glasgow</span>
+                            <span class="bs-card-desc">Evaluación del nivel de consciencia: respuesta ocular, verbal y motora con acciones sugeridas.</span>
+                            <span class="bs-card-tag">Abrir →</span>
+                        </a>
+                        <a href="#" class="bs-card" onclick="switchBsTab('tool-signos'); return false;">
+                            <span class="bs-card-title">Signos Vitales</span>
+                            <span class="bs-card-desc">Valores de referencia por grupo etario clasificados en normal, urgencia y emergencia.</span>
+                            <span class="bs-card-tag">Abrir →</span>
+                        </a>
+                        <a href="#" class="bs-card" onclick="switchBsTab('tool-conversor'); return false;">
+                            <span class="bs-card-title">Conversor de Unidades</span>
+                            <span class="bs-card-desc">Presión, distancia, área, volumen, peso, fuerza, temperatura, caudal y duración de oxígeno.</span>
+                            <span class="bs-card-tag">Abrir →</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2a. Herramienta: Escala de Glasgow -->
+                <div class="bs-panel" id="bspanel-tool-glasgow">
+                    <div class="tool-topbar">
+                        <button type="button" class="tool-back-btn" onclick="switchBsTab('herramientas')">← Herramientas</button>
+                        <div class="tool-switcher" role="group" aria-label="Cambiar herramienta">
+                            <button type="button" class="tool-switch-btn active" onclick="switchBsTab('tool-glasgow')" aria-current="page">Glasgow</button>
+                            <button type="button" class="tool-switch-btn" onclick="switchBsTab('tool-signos')">Signos Vitales</button>
+                            <button type="button" class="tool-switch-btn" onclick="switchBsTab('tool-conversor')">Conversor</button>
+                        </div>
+                    </div>
+
+                    <div class="bs-panel-header">
+                        <h3>Escala de Glasgow</h3>
+                        <p>Evaluación del nivel de consciencia (3 a 15 puntos).</p>
+                    </div>
+
+                    <div class="tool-callout">
+                        <strong class="tool-callout-title">Cómo usar esta calculadora</strong>
+                        <ol class="tool-callout-list">
+                            <li><strong>Evalúa las 3 respuestas</strong> del paciente: ocular, verbal y motora.</li>
+                            <li><strong>Selecciona una opción</strong> en cada categoría según lo observado.</li>
+                            <li><strong>El puntaje total</strong> se calcula automáticamente junto con la gravedad y acciones recomendadas.</li>
+                        </ol>
+                    </div>
+
+                    <div class="gcs-layout">
+                        <div class="gcs-sections">
+                            <section class="tool-card gcs-group">
+                                <h4 class="tool-section-title">Respuesta Ocular</h4>
+                                <div class="gcs-options">
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('ocular', 4, this)">
+                                        <span>Espontánea</span>
+                                        <span class="gcs-score">4</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('ocular', 3, this)">
+                                        <span>Al comando verbal</span>
+                                        <span class="gcs-score">3</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('ocular', 2, this)">
+                                        <span>Al dolor</span>
+                                        <span class="gcs-score">2</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('ocular', 1, this)">
+                                        <span>No respuesta</span>
+                                        <span class="gcs-score">1</span>
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section class="tool-card gcs-group">
+                                <h4 class="tool-section-title">Respuesta Verbal</h4>
+                                <div class="gcs-options">
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('verbal', 5, this)">
+                                        <span>Orientado y conversa</span>
+                                        <span class="gcs-score">5</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('verbal', 4, this)">
+                                        <span>Desorientado y conversa</span>
+                                        <span class="gcs-score">4</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('verbal', 3, this)">
+                                        <span>Palabras inapropiadas</span>
+                                        <span class="gcs-score">3</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('verbal', 2, this)">
+                                        <span>Sonidos incomprensibles</span>
+                                        <span class="gcs-score">2</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('verbal', 1, this)">
+                                        <span>No respuesta</span>
+                                        <span class="gcs-score">1</span>
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section class="tool-card gcs-group">
+                                <h4 class="tool-section-title">Respuesta Motora</h4>
+                                <div class="gcs-options">
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('motora', 6, this)">
+                                        <span>Obedece órdenes</span>
+                                        <span class="gcs-score">6</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('motora', 5, this)">
+                                        <span>Localiza el dolor</span>
+                                        <span class="gcs-score">5</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('motora', 4, this)">
+                                        <span>Retira al dolor</span>
+                                        <span class="gcs-score">4</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('motora', 3, this)">
+                                        <span>Flexión anormal</span>
+                                        <span class="gcs-score">3</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('motora', 2, this)">
+                                        <span>Extensión anormal</span>
+                                        <span class="gcs-score">2</span>
+                                    </button>
+                                    <button type="button" class="gcs-option" aria-pressed="false" onclick="BomberosHerramientas.selectGlasgow('motora', 1, this)">
+                                        <span>No respuesta</span>
+                                        <span class="gcs-score">1</span>
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+
+                        <section class="tool-card gcs-result-card" aria-live="polite">
+                            <div class="gcs-breakdown">
+                                <div class="gcs-stat">
+                                    <span class="gcs-stat-num" id="gcs-ocular">-</span>
+                                    <span class="gcs-stat-label">Ocular</span>
+                                </div>
+                                <div class="gcs-stat">
+                                    <span class="gcs-stat-num" id="gcs-verbal">-</span>
+                                    <span class="gcs-stat-label">Verbal</span>
+                                </div>
+                                <div class="gcs-stat">
+                                    <span class="gcs-stat-num" id="gcs-motora">-</span>
+                                    <span class="gcs-stat-label">Motora</span>
+                                </div>
+                            </div>
+
+                            <div class="gcs-total-block">
+                                <span class="gcs-total-caption">Puntaje total</span>
+                                <div class="gcs-total-num" id="gcs-total">-</div>
+                                <div id="gcs-severity" class="tool-severity" hidden></div>
+                            </div>
+
+                            <div id="gcs-actions" class="gcs-actions" hidden>
+                                <h4 class="gcs-actions-title">Acciones requeridas</h4>
+                                <ul id="gcs-actions-list"></ul>
+                            </div>
+
+                            <button type="button" class="tool-primary-btn tool-reset-btn" onclick="BomberosHerramientas.resetGlasgow()">Resetear</button>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- 2b. Herramienta: Signos Vitales -->
+                <div class="bs-panel" id="bspanel-tool-signos">
+                    <div class="tool-topbar">
+                        <button type="button" class="tool-back-btn" onclick="switchBsTab('herramientas')">← Herramientas</button>
+                        <div class="tool-switcher" role="group" aria-label="Cambiar herramienta">
+                            <button type="button" class="tool-switch-btn" onclick="switchBsTab('tool-glasgow')">Glasgow</button>
+                            <button type="button" class="tool-switch-btn active" onclick="switchBsTab('tool-signos')" aria-current="page">Signos Vitales</button>
+                            <button type="button" class="tool-switch-btn" onclick="switchBsTab('tool-conversor')">Conversor</button>
+                        </div>
+                    </div>
+
+                    <div class="bs-panel-header">
+                        <h3>Signos Vitales</h3>
+                        <p>Valores de referencia por grupo etario.</p>
+                    </div>
+
+                    <div class="tool-tabs-bar" role="group" aria-label="Grupo etario">
+                        <button type="button" class="tool-age-btn" data-age="recien-nacido" aria-pressed="false" onclick="BomberosHerramientas.renderVitalSignsTable('recien-nacido')">0-1 mes</button>
+                        <button type="button" class="tool-age-btn" data-age="lactante" aria-pressed="false" onclick="BomberosHerramientas.renderVitalSignsTable('lactante')">1-12 meses</button>
+                        <button type="button" class="tool-age-btn" data-age="nino-pequeno" aria-pressed="false" onclick="BomberosHerramientas.renderVitalSignsTable('nino-pequeno')">1-3 años</button>
+                        <button type="button" class="tool-age-btn" data-age="nino" aria-pressed="false" onclick="BomberosHerramientas.renderVitalSignsTable('nino')">4-12 años</button>
+                        <button type="button" class="tool-age-btn" data-age="adolescente" aria-pressed="false" onclick="BomberosHerramientas.renderVitalSignsTable('adolescente')">13-17 años</button>
+                        <button type="button" class="tool-age-btn active" data-age="adulto" aria-pressed="true" onclick="BomberosHerramientas.renderVitalSignsTable('adulto')">18-64 años</button>
+                        <button type="button" class="tool-age-btn" data-age="adulto-mayor" aria-pressed="false" onclick="BomberosHerramientas.renderVitalSignsTable('adulto-mayor')">65+ años</button>
+                    </div>
+
+                    <section class="tool-card sv-table-card">
+                        <h4 class="tool-section-title" id="sv-active-title">Adulto (18-64 años)</h4>
+                        <div class="sv-table-wrap">
+                            <table class="sv-table">
+                                <thead>
+                                    <tr>
+                                        <th>Signo Vital</th>
+                                        <th>Normal</th>
+                                        <th>Urgencia</th>
+                                        <th>Emergencia</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sv-table-body"></tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <div class="tool-disclaimer">
+                        <strong>Importante:</strong> Valores de referencia. No reemplazan evaluación médica integral. Considerar contexto clínico del paciente.
+                    </div>
+                </div>
+
+                <!-- 2c. Herramienta: Conversor de Unidades -->
+                <div class="bs-panel" id="bspanel-tool-conversor">
+                    <div class="tool-topbar">
+                        <button type="button" class="tool-back-btn" onclick="switchBsTab('herramientas')">← Herramientas</button>
+                        <div class="tool-switcher" role="group" aria-label="Cambiar herramienta">
+                            <button type="button" class="tool-switch-btn" onclick="switchBsTab('tool-glasgow')">Glasgow</button>
+                            <button type="button" class="tool-switch-btn" onclick="switchBsTab('tool-signos')">Signos Vitales</button>
+                            <button type="button" class="tool-switch-btn active" onclick="switchBsTab('tool-conversor')" aria-current="page">Conversor</button>
+                        </div>
+                    </div>
+
+                    <div class="bs-panel-header">
+                        <h3>Conversor de Unidades</h3>
+                        <p>Conversión instantánea en tiempo real y cálculo de duración de oxígeno.</p>
+                    </div>
+
+                    <div class="tool-tabs-bar" role="group" aria-label="Categorías de conversión">
+                        <button type="button" class="conv-cat-btn active" data-cat="todas" aria-pressed="true" onclick="BomberosHerramientas.filterConverterCategory('todas')">Todas</button>
+                        <button type="button" class="conv-cat-btn" data-cat="presion" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('presion')">Presión</button>
+                        <button type="button" class="conv-cat-btn" data-cat="caudal" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('caudal')">Caudal</button>
+                        <button type="button" class="conv-cat-btn" data-cat="oxigeno" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('oxigeno')">Oxígeno</button>
+                        <button type="button" class="conv-cat-btn" data-cat="distancia" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('distancia')">Distancia</button>
+                        <button type="button" class="conv-cat-btn" data-cat="volumen" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('volumen')">Volumen</button>
+                        <button type="button" class="conv-cat-btn" data-cat="peso" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('peso')">Peso</button>
+                        <button type="button" class="conv-cat-btn" data-cat="area" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('area')">Área</button>
+                        <button type="button" class="conv-cat-btn" data-cat="fuerza" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('fuerza')">Fuerza</button>
+                        <button type="button" class="conv-cat-btn" data-cat="temperatura" aria-pressed="false" onclick="BomberosHerramientas.filterConverterCategory('temperatura')">Temperatura</button>
+                    </div>
+
+                    <div class="conv-stack">
+                        <section class="tool-card conv-card" data-cat="presion">
+                            <h4 class="tool-section-title">Presión</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-psi">PSI</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-psi" oninput="BomberosHerramientas.handleConverterInput('presion', 'psi')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-bar">Bar</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-bar" oninput="BomberosHerramientas.handleConverterInput('presion', 'bar')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-kpa">kPa</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-kpa" oninput="BomberosHerramientas.handleConverterInput('presion', 'kpa')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-mh2o">mH2O</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-mh2o" oninput="BomberosHerramientas.handleConverterInput('presion', 'mh2o')" placeholder="0.00">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="caudal">
+                            <h4 class="tool-section-title">Caudal</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-lpm">LPM (L/min)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-lpm" oninput="BomberosHerramientas.handleConverterInput('caudal', 'lpm')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-gpm">GPM (gal/min)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-gpm" oninput="BomberosHerramientas.handleConverterInput('caudal', 'gpm')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-ls">L/s</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-ls" oninput="BomberosHerramientas.handleConverterInput('caudal', 'ls')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-m3s">m³/s</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-m3s" oninput="BomberosHerramientas.handleConverterInput('caudal', 'm3s')" placeholder="0.00000">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="oxigeno">
+                            <h4 class="tool-section-title">Calculador de Oxígeno</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-oxPsi">Presión del cilindro (PSI)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-oxPsi" value="2000">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-oxFactor">Factor del cilindro</label>
+                                    <input type="number" step="0.01" inputmode="decimal" id="conv-oxFactor" value="0.28">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-oxFlujo">Flujo (LPM)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-oxFlujo" value="15">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-oxDuracion">Duración (minutos)</label>
+                                    <input type="number" id="conv-oxDuracion" readonly placeholder="—">
+                                </div>
+                            </div>
+                            <button type="button" class="tool-primary-btn conv-calc-btn" onclick="BomberosHerramientas.handleOxygenCalculate()">Calcular duración</button>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="distancia">
+                            <h4 class="tool-section-title">Distancia</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-metros">Metros</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-metros" oninput="BomberosHerramientas.handleConverterInput('distancia', 'metros')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-pies">Pies</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-pies" oninput="BomberosHerramientas.handleConverterInput('distancia', 'pies')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-pulgadas">Pulgadas</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-pulgadas" oninput="BomberosHerramientas.handleConverterInput('distancia', 'pulgadas')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-cm">Centímetros</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-cm" oninput="BomberosHerramientas.handleConverterInput('distancia', 'cm')" placeholder="0.00">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="volumen">
+                            <h4 class="tool-section-title">Volumen</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-litros">Litros</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-litros" oninput="BomberosHerramientas.handleConverterInput('volumen', 'litros')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-galones">Galones</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-galones" oninput="BomberosHerramientas.handleConverterInput('volumen', 'galones')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-m3">m³</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-m3" oninput="BomberosHerramientas.handleConverterInput('volumen', 'm3')" placeholder="0.000">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="peso">
+                            <h4 class="tool-section-title">Peso</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-kg">Kilogramos</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-kg" oninput="BomberosHerramientas.handleConverterInput('peso', 'kg')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-lb">Libras</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-lb" oninput="BomberosHerramientas.handleConverterInput('peso', 'lb')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-gramos">Gramos</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-gramos" oninput="BomberosHerramientas.handleConverterInput('peso', 'gramos')" placeholder="0">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="area">
+                            <h4 class="tool-section-title">Área</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-m2">m²</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-m2" oninput="BomberosHerramientas.handleConverterInput('area', 'm2')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-ft2">ft²</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-ft2" oninput="BomberosHerramientas.handleConverterInput('area', 'ft2')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-hectareas">Hectáreas</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-hectareas" oninput="BomberosHerramientas.handleConverterInput('area', 'hectareas')" placeholder="0.0000">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="fuerza">
+                            <h4 class="tool-section-title">Fuerza</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-newton">Newton (N)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-newton" oninput="BomberosHerramientas.handleConverterInput('fuerza', 'newton')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-kgf">kgf</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-kgf" oninput="BomberosHerramientas.handleConverterInput('fuerza', 'kgf')" placeholder="0.00">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-lbf">lbf</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-lbf" oninput="BomberosHerramientas.handleConverterInput('fuerza', 'lbf')" placeholder="0.00">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tool-card conv-card" data-cat="temperatura">
+                            <h4 class="tool-section-title">Temperatura</h4>
+                            <div class="conv-grid">
+                                <div class="conv-field">
+                                    <label for="conv-celsius">Celsius (°C)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-celsius" oninput="BomberosHerramientas.handleConverterInput('temperatura', 'celsius')" placeholder="0.0">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-fahrenheit">Fahrenheit (°F)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-fahrenheit" oninput="BomberosHerramientas.handleConverterInput('temperatura', 'fahrenheit')" placeholder="0.0">
+                                </div>
+                                <div class="conv-field">
+                                    <label for="conv-kelvin">Kelvin (K)</label>
+                                    <input type="number" step="any" inputmode="decimal" id="conv-kelvin" oninput="BomberosHerramientas.handleConverterInput('temperatura', 'kelvin')" placeholder="0.0">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- 3. Formación ESBAS -->
+                <div class="bs-panel" id="bspanel-formacion">
+                    <div class="bs-panel-header">
+                        <h3>Formación ESBAS</h3>
                         <p>Lecciones teóricas divididas en tres módulos</p>
                     </div>
 
@@ -116,7 +609,7 @@
                         <div class="module-card mod-open" id="modulo-i">
                             <div class="module-header" onclick="toggleModule('modulo-i')">
                                 <div class="module-header-left">
-                                    <span class="module-badge">📘</span>
+                                    <span class="module-badge">I</span>
                                     <div>
                                         <div class="module-title">Módulo I — Fundamentos e Institución</div>
                                         <div class="module-count">9 lecciones</div>
@@ -150,7 +643,7 @@
                         <div class="module-card" id="modulo-ii">
                             <div class="module-header" onclick="toggleModule('modulo-ii')">
                                 <div class="module-header-left">
-                                    <span class="module-badge">🔥</span>
+                                    <span class="module-badge">II</span>
                                     <div>
                                         <div class="module-title">Módulo II — Incendios y Extinción</div>
                                         <div class="module-count">12 lecciones</div>
@@ -190,7 +683,7 @@
                         <div class="module-card" id="modulo-iii">
                             <div class="module-header" onclick="toggleModule('modulo-iii')">
                                 <div class="module-header-left">
-                                    <span class="module-badge">🏗️</span>
+                                    <span class="module-badge">III</span>
                                     <div>
                                         <div class="module-title">Módulo III — Operaciones Avanzadas</div>
                                         <div class="module-count">13 lecciones</div>
@@ -233,71 +726,17 @@
                     </div>
                 </div>
 
-                <!-- 2. Unidades -->
-                <div class="bs-panel" id="bspanel-equipamiento">
-                    <div class="bs-panel-header">
-                        <h3> Unidades y Equipos</h3>
-                        <p>Unidades, EPP y equipos especializados de la compañía.</p>
-                    </div>
-                    <div class="bs-cards-grid">
-                        
-                        
-                        <a href="#" class="bs-card">
-                            <span class="bs-card-icon">🚒</span>
-                            <span class="bs-card-title">Máquina 4-5</span>
-                            <span class="bs-card-desc">Autobomba principal. Equipamiento, capacidad y
-                                operación.</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                        <a href="#" class="bs-card">
-                            <span class="bs-card-icon">🚒</span>
-                            <span class="bs-card-title">Rescate Pesada 4</span>
-                            <span class="bs-card-desc">Equipos de rescate estructural pesado y sus
-                                aplicaciones.</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                        <a href="#" class="bs-card">
-                            <span class="bs-card-icon">🚚</span>
-                            <span class="bs-card-title">Rescate Ligera 4</span>
-                            <span class="bs-card-desc">Unidad de rescate ligero para primeras intervenciones.</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                        
-                        <a href="#" class="bs-card">
-                            <span class="bs-card-icon">🚑</span>
-                            <span class="bs-card-title">Ambulancia</span>
-                            <span class="bs-card-desc">Unidad de atención médica prehospitalaria y
-                                equipamiento.</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                        <a href="#" class="bs-card">
-                            <span class="bs-card-icon">🦺</span>
-                            <span class="bs-card-title">EPP</span>
-                            <span class="bs-card-desc">Equipo de Protección Personal: casco, traje de aproximación,
-                                botas, guantes.</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                        <a href="#" class="bs-card">
-                            <span class="bs-card-icon">📐</span>
-                            <span class="bs-card-title">Equipos Especializados</span>
-                            <span class="bs-card-desc">Normas NFPA aplicables al equipamiento y mantenimiento de
-                                unidades.</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 3. Códigos CGBVP -->
+                <!-- 4. Códigos CGBVP -->
                 <div class="bs-panel" id="bspanel-codigos">
                     <div class="bs-panel-header">
-                        <h3> Códigos Oficiales del CGBVP</h3>
+                        <h3>Códigos Oficiales del CGBVP</h3>
                         <p>Permiten ejecutar protocolos y operaciones con rapidez en la transmisión, exactitud en el
                             mensaje y confidencialidad</p>
                     </div>
 
                     
 
-                    <h4 class="code-section-title">Códigos de Comunicación Básica</h4>
+                    <h4 class="code-section-title">Servicios</h4>
                     <div class="codes-grid">
                         <div class="code-card">
                             <div class="c-num">10.01</div>
@@ -305,11 +744,11 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.02</div>
-                            <div class="c-txt">Operador(a) de radio identifíquese</div>
+                            <div class="c-txt">Operador de radio, identificarse</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.03</div>
-                            <div class="c-txt">Cambie frecuencia</div>
+                            <div class="c-txt">Cambio de frecuencia</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.04</div>
@@ -317,7 +756,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.05</div>
-                            <div class="c-txt">Comprendido / recibido</div>
+                            <div class="c-txt">Comprendido/recibido</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.06</div>
@@ -325,7 +764,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.07</div>
-                            <div class="c-txt">Se dirige / diríjase</div>
+                            <div class="c-txt">Se dirige / Diríjase</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.08</div>
@@ -353,7 +792,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.14</div>
-                            <div class="c-txt">Consulta. se consulta</div>
+                            <div class="c-txt">Se consulta</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.15</div>
@@ -365,7 +804,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.17</div>
-                            <div class="c-txt">Informe / novedades</div>
+                            <div class="c-txt">Informes/novedades</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.18</div>
@@ -377,7 +816,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.20</div>
-                            <div class="c-txt">La unidad se encuentra en el lugar</div>
+                            <div class="c-txt">En el lugar</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.21</div>
@@ -417,7 +856,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.30</div>
-                            <div class="c-txt">Ingresa su base</div>
+                            <div class="c-txt">Ingresa a su base</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.31</div>
@@ -433,7 +872,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.34</div>
-                            <div class="c-txt">Tome precauciones</div>
+                            <div class="c-txt">Tomar precauciones</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.35</div>
@@ -445,11 +884,11 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.37</div>
-                            <div class="c-txt">Requiere empresa eléctrica</div>
+                            <div class="c-txt">Requiere empresas eléctricas</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.38</div>
-                            <div class="c-txt">Abastecimiento de</div>
+                            <div class="c-txt">Abastecimiento - indique</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.39</div>
@@ -469,7 +908,7 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.43</div>
-                            <div class="c-txt">Herido FFAA/FFPP herido</div>
+                            <div class="c-txt">Herido FF.AA/FF.PP</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">10.44</div>
@@ -503,44 +942,9 @@
                             <div class="c-num">10.51</div>
                             <div class="c-txt">Parturienta</div>
                         </div>
-                        <div class="code-card">
-                            <div class="c-num">10.52</div>
-                            <div class="c-txt">Toque sirena</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.53</div>
-                            <div class="c-txt">Regrese a su base</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.54</div>
-                            <div class="c-txt">Prosiga la marcha</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.55</div>
-                            <div class="c-txt">Requiere de Empr. de Agua</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.56</div>
-                            <div class="c-txt">Deje sin efecto</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.57</div>
-                            <div class="c-txt">Utilice claves</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.58</div>
-                            <div class="c-txt">Fin de estado de alerta</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.59</div>
-                            <div class="c-txt">Guardia nocturna</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">10.60</div>
-                            <div class="c-txt">Tipo de emergencia</div>
-                        </div>
                     </div>
-                    <h4 class="code-section-title">Códigos de Emergencias</h4>
+
+                    <h4 class="code-section-title">Emergencias</h4>
                     <div class="codes-grid">
                         <div class="code-card">
                             <div class="c-num">20.01</div>
@@ -552,11 +956,11 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">20.03</div>
-                            <div class="c-txt">Atentado / artefacto explosivo</div>
+                            <div class="c-txt">Atentado/artefacto explosivo</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">20.04</div>
-                            <div class="c-txt">Atropellado</div>
+                            <div class="c-txt">Atropello</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">20.05</div>
@@ -584,39 +988,15 @@
                         </div>
                         <div class="code-card">
                             <div class="c-num">20.11</div>
-                            <div class="c-txt">Material peligros - indique</div>
+                            <div class="c-txt">Emergencia mercancia peligrosa</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">20.12</div>
-                            <div class="c-txt">Fuga de gas – indique proporc.</div>
+                            <div class="c-txt">Fuga de gas-indique proporciones</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">20.13</div>
-                            <div class="c-txt">Grifo / Cisterna</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">20.14</div>
-                            <div class="c-txt">Amago de incendio (cód. 0)</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">20.15</div>
-                            <div class="c-txt">No requiere apoyo (cód. 1)</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">20.16</div>
-                            <div class="c-txt">Medianas proporciones (cód. 2)</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">20.17</div>
-                            <div class="c-txt">Med. prop. alta prob. propagación (cód 4)</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">20.18</div>
-                            <div class="c-txt">Grandes proporciones (cód 4)</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">20.19</div>
-                            <div class="c-txt">Catástrofe - orden 7.11 - 7.12</div>
+                            <div class="c-txt">Grifo/camión transporte de combustible</div>
                         </div>
                         <div class="code-card">
                             <div class="c-num">20.20</div>
@@ -650,8 +1030,109 @@
                             <div class="c-num">20.27</div>
                             <div class="c-txt">Poste eléctrico/aviso luminoso</div>
                         </div>
+                        <div class="code-card">
+                            <div class="c-num">0</div>
+                            <div class="c-txt">Amago de incendio no requiere apoyo</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">1</div>
+                            <div class="c-txt">No requiere apoyo</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">2</div>
+                            <div class="c-txt">Requiere apoyo</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3</div>
+                            <div class="c-txt">Medianas proporciones</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">4</div>
+                            <div class="c-txt">Medianas proporciones con propagación</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">5</div>
+                            <div class="c-txt">Grandes proporciones</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">6</div>
+                            <div class="c-txt">Masivo, fuera de control</div>
+                        </div>
                     </div>
-                    <h4 class="code-section-title">Códigos de Comandancia y Oficialidad</h4>
+
+                    <h4 class="code-section-title">Especiales</h4>
+                    <div class="codes-grid">
+                        <div class="code-card">
+                            <div class="c-num">30.30</div>
+                            <div class="c-txt">Otro servicio/Servicio especial</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">30.31</div>
+                            <div class="c-txt">Prácticas/charlas/simulacros</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">30.32</div>
+                            <div class="c-txt">Eventos/conciertos/festivales</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">30.33</div>
+                            <div class="c-txt">Abrir puertas</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">30.34</div>
+                            <div class="c-txt">Colocar letreros/pancartas</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">30.35</div>
+                            <div class="c-txt">Velorio / Entierro</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">30.36</div>
+                            <div class="c-txt">Apoyos sociales</div>
+                        </div>
+                    </div>
+
+                    <h4 class="code-section-title">Grados</h4>
+                    <div class="codes-grid">
+                        <div class="code-card">
+                            <div class="c-num">3.01</div>
+                            <div class="c-txt">Brigadier General</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.02</div>
+                            <div class="c-txt">Brigadier Mayor</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.03</div>
+                            <div class="c-txt">Brigadier</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.04</div>
+                            <div class="c-txt">Teniente brigadier</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.05</div>
+                            <div class="c-txt">Capitán</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.06</div>
+                            <div class="c-txt">Teniente</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.07</div>
+                            <div class="c-txt">Sub. Teniente</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.08</div>
+                            <div class="c-txt">Seccionario</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">3.09</div>
+                            <div class="c-txt">Alumno</div>
+                        </div>
+                    </div>
+
+                    <h4 class="code-section-title">Compañía</h4>
                     <div class="codes-grid">
                         <div class="code-card">
                             <div class="c-num">30.11</div>
@@ -685,87 +1166,181 @@
                             <div class="c-num">30.22</div>
                             <div class="c-txt">Médico de turno</div>
                         </div>
-                        <div class="code-card">
-                            <div class="c-num">30.30</div>
-                            <div class="c-txt">Otro servicio / Servicio especial</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">30.31</div>
-                            <div class="c-txt">Practicas / charlas / simulacros</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">30.32</div>
-                            <div class="c-txt">Eventos / conciertos / festivales</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">30.33</div>
-                            <div class="c-txt">Abrir puertas</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">30.34</div>
-                            <div class="c-txt">Colocar letreros / pancartas</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">30.35</div>
-                            <div class="c-txt">Velorio / Entierro</div>
-                        </div>
-                        <div class="code-card">
-                            <div class="c-num">30.36</div>
-                            <div class="c-txt">Apoyos sociales</div>
-                        </div>
                     </div>
-                    <h4 class="code-section-title">Códigos Complementarios</h4>
+
+                    <h4 class="code-section-title">Alarmas</h4>
                     <div class="codes-grid">
                         <div class="code-card">
-                            <div class="c-num">01.01</div>
-                            <div class="c-txt">Contador</div>
+                            <div class="c-num">Alarma 1</div>
+                            <div class="c-txt">(2) Unidades de Agua</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">01.02</div>
-                            <div class="c-txt">Secretaria</div>
+                            <div class="c-num">Alarma 2</div>
+                            <div class="c-txt">(2) Unidades de Agua (1) Rescate (1) Sanidad (1) Aérea</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">01.06</div>
-                            <div class="c-txt">Operador de radio</div>
+                            <div class="c-num">Alarma 3</div>
+                            <div class="c-txt">(3) Unidades de Agua (1) Rescate (1) Sanidad (1) Aérea</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">Alarma 4</div>
+                            <div class="c-txt">(4) Unidades de Agua (1) Rescate (3) Sanidad (1) Aérea</div>
                         </div>
                     </div>
-                    <h4 class="code-section-title">Grados</h4>
+
+                    <h4 class="code-section-title">Asociación</h4>
                     <div class="codes-grid">
                         <div class="code-card">
-                            <div class="c-num">03.01</div>
-                            <div class="c-txt">Brigadier General</div>
+                            <div class="c-num">Código 0</div>
+                            <div class="c-txt">Ninguno</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.02</div>
-                            <div class="c-txt">Brigadier Mayor</div>
+                            <div class="c-num">Código 1</div>
+                            <div class="c-txt">Ninguna</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.03</div>
-                            <div class="c-txt">Brigadier</div>
+                            <div class="c-num">Código 2</div>
+                            <div class="c-txt">Alarma 1</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.04</div>
-                            <div class="c-txt">Teniente brigadier</div>
+                            <div class="c-num">Código 3</div>
+                            <div class="c-txt">Alarma 1 + Alarma 2</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.05</div>
-                            <div class="c-txt">Capitán</div>
+                            <div class="c-num">Código 4</div>
+                            <div class="c-txt">Alarma 1 + Alarma 2 + Alarma 3</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.06</div>
-                            <div class="c-txt">Teniente</div>
+                            <div class="c-num">Código 5</div>
+                            <div class="c-txt">Alarma 1 + Alarma 2 + Alarma 3 + Alarma 4</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.07</div>
-                            <div class="c-txt">Sub. Teniente</div>
+                            <div class="c-num">Código 6</div>
+                            <div class="c-txt">Alarma 1 + Alarma 2 + Alarma 3 + Alarma 4 más lo requerido del Cdte. De Incidente</div>
+                        </div>
+                    </div>
+
+                    <h4 class="code-section-title">Comando Nacional</h4>
+                    <div class="codes-grid">
+                        <div class="code-card">
+                            <div class="c-num">90.11</div>
+                            <div class="c-txt">Comandante General</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.08</div>
-                            <div class="c-txt">Seccionario</div>
+                            <div class="c-num">90.12</div>
+                            <div class="c-txt">Vice Comandante General</div>
                         </div>
                         <div class="code-card">
-                            <div class="c-num">03.09</div>
-                            <div class="c-txt">Aspirante</div>
+                            <div class="c-num">90.12.1</div>
+                            <div class="c-txt">Comandante Territorial Lima Callao</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.12.2</div>
+                            <div class="c-txt">Comandante Territorial Norte</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.12.3</div>
+                            <div class="c-txt">Comandante Territorial Centro</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.12.4</div>
+                            <div class="c-txt">Comandante Territorial Sur</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.12.5</div>
+                            <div class="c-txt">Comandante Territorial Oriente</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.13</div>
+                            <div class="c-txt">Inspector General</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.14</div>
+                            <div class="c-txt">Presidente del Consejo Nacional de Disciplina</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.15</div>
+                            <div class="c-txt">Asesor Jurídico</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.16</div>
+                            <div class="c-txt">Dirección General de Operaciones</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.17</div>
+                            <div class="c-txt">Dirección General de Prevención e Investigación de Incendios</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.18</div>
+                            <div class="c-txt">Dirección General del Voluntariado</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.19</div>
+                            <div class="c-txt">Dirección General de Formación Académica</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.20</div>
+                            <div class="c-txt">Dirección General de Gestión Interinstitucional</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.21</div>
+                            <div class="c-txt">Dirección de Gestión de Riesgo y Desastre</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.22</div>
+                            <div class="c-txt">Dirección de Programa de Respuesta</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.23</div>
+                            <div class="c-txt">Dirección de Comunicaciones</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.24</div>
+                            <div class="c-txt">Dirección de Ingeniería</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.25</div>
+                            <div class="c-txt">Dirección de Prevención e Investigación de Incendios</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.26</div>
+                            <div class="c-txt">Jefe Nacional USAR</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.27</div>
+                            <div class="c-txt">Jefe Nacional Materiales Peligrosos</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.28</div>
+                            <div class="c-txt">Jefe Nacional Forestal</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.29</div>
+                            <div class="c-txt">Jefe Nacional de Gestión de Emergencias</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.30</div>
+                            <div class="c-txt">Jefe Nacional de Programa de Soporte de Tecnología de Emergencias</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.31</div>
+                            <div class="c-txt">Jefe Nacional de Rescate Técnico</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.32</div>
+                            <div class="c-txt">Jefe Nacional de Combate Técnico Estructural</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.33</div>
+                            <div class="c-txt">Jefe Nacional de Atención Pre Hospitalaria</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.34</div>
+                            <div class="c-txt">Jefe Nacional de la Central de Emergencias</div>
+                        </div>
+                        <div class="code-card">
+                            <div class="c-num">90.35</div>
+                            <div class="c-txt">Jefe de la Oficina de Tecnología de la Información y Telecomunicaciones (OTIT)</div>
                         </div>
                     </div>
 
@@ -810,7 +1385,12 @@
                             <div class="tip-box" id="baloTip" style="display:none;"></div>
                             <div class="balo-controls">
                                 <div class="search-wrap">
-                                    <span class="search-icon">🔍</span>
+                                    <span class="search-icon" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </span>
                                     <input type="text" id="searchInput" placeholder="Buscar pregunta..."
                                         autocomplete="off" />
                                 </div>
@@ -826,90 +1406,59 @@
                 <!-- 6. Biblioteca y Recursos -->
                 <div class="bs-panel" id="bspanel-biblioteca">
                     <div class="bs-panel-header">
-                        <h3> Biblioteca y Recursos</h3>
-                        <p>Manuales, normas y documentos de referencia para la formación bomberil.</p>
+                        <h3>Biblioteca</h3>
+                        <p>Manuales oficiales, apuntes de clase y referencias históricas del CGBVP.</p>
                     </div>
-                    <div class="bs-cards-grid">
-                        <a href="#" class="bs-card" onclick="switchBsTab('evaluacion-historia'); return false;">
-                            <span class="bs-card-icon" style="display:none;"></span>
-                            <span class="bs-card-title">Evaluación Historia CGBVP 15/11/26</span>
-                            <span class="bs-card-desc">Preguntas y respuestas clave: historia institucional, mártires, lema, héroes y escalafón del CGBVP.</span>
-                            <span class="bs-card-tag">Leer →</span>
-                        </a>
 
-                        <a href="#" class="bs-card" onclick="switchBsTab('tarea10426'); return false;">
-                            <span class="bs-card-icon" style="display:none;"></span>
-                            <span class="bs-card-title">Tarea 1/04/26</span>
-                            <span class="bs-card-desc">Apuntes de estudio: Información de la bomba, EPP, Himno y
-                                más.</span>
-                            <span class="bs-card-tag">Leer →</span>
-                        </a>
+                    <h4 class="code-section-title">Manuales Oficiales</h4>
+                    <div class="bs-cards-grid bs-section-grid">
                         <a href="https://drive.google.com/drive/folders/12UJdPaLAI5D_zFYHTjgWAapeDpp5axKi?usp=sharing"
-                            target="_blank" class="bs-card">
-
+                            target="_blank" rel="noopener noreferrer" class="bs-card">
                             <span class="bs-card-title">IFSTA</span>
                             <span class="bs-card-desc">Manuales del International Fire Service Training Association
                                 en español.</span>
                             <span class="bs-card-tag">Ver →</span>
                         </a>
                         <a href="https://drive.google.com/file/d/1ETg4hJmkC6SMaYBM1DoKE8-0HsEpmmsH/view?usp=sharing"
-                            target="_blank" class="bs-card">
-
+                            target="_blank" rel="noopener noreferrer" class="bs-card">
                             <span class="bs-card-title">Manual ESBAS 2021</span>
                             <span class="bs-card-desc">Manual Completo</span>
                             <span class="bs-card-tag">Ver →</span>
                         </a>
                         <a href="https://drive.google.com/drive/folders/1_6Mf97NMrJJB3zZbekQY8ttTrhe6glbj?usp=sharing"
-                            target="_blank" class="bs-card">
-
+                            target="_blank" rel="noopener noreferrer" class="bs-card">
                             <span class="bs-card-title">Manual ESBAS 2026</span>
                             <span class="bs-card-desc">Por Módulos</span>
                             <span class="bs-card-tag">Ver →</span>
                         </a>
+                    </div>
 
-                        <a href="https://drive.google.com/drive/folders/1M0AY0jvz58IdvlNiUdOCNf_32Bn06tRU?usp=sharing" class="bs-card" onclick="switchBsTab('links'); return false;">
-                            <span class="bs-card-icon">🔗</span>
-                            <span class="bs-card-title">Links</span>
-                            <span class="bs-card-desc">Recursos web, plataformas y repositorios externos de interés
-                                bomberil.</span>
-                            <span class="bs-card-tag">Explorar →</span>
+                    <h4 class="code-section-title">Apuntes y Evaluaciones</h4>
+                    <div class="bs-cards-grid bs-section-grid">
+                        <a href="#" class="bs-card" onclick="switchBsTab('evaluacion-historia'); return false;">
+                            <span class="bs-card-title">Evaluación Historia CGBVP 15/11/26</span>
+                            <span class="bs-card-desc">Preguntas y respuestas clave: historia institucional, mártires, lema, héroes y escalafón del CGBVP.</span>
+                            <span class="bs-card-tag">Leer →</span>
+                        </a>
+                        <a href="#" class="bs-card" onclick="switchBsTab('tarea10426'); return false;">
+                            <span class="bs-card-title">Tarea 1/04/26</span>
+                            <span class="bs-card-desc">Apuntes de estudio: Información de la bomba, EPP, Himno y
+                                más.</span>
+                            <span class="bs-card-tag">Leer →</span>
                         </a>
                     </div>
 
-                </div>
-
-                <!-- 8.5 Panel Links -->
-                <div class="bs-panel" id="bspanel-links">
-                    <div class="bs-panel-header">
-                        <h3><a href="#" onclick="switchBsTab('biblioteca'); return false;"
-                                style="color: var(--color-subtext); text-decoration: none; margin-right: 15px; font-size:1.1rem;">←
-                                Volver</a> Links</h3>
-                    </div>
-                    <div class="bs-cards-grid" style="margin-top: 20px;">
-                        <a href="https://sgonorte.bomberosperu.gob.pe/24horas" target="_blank" class="bs-card">
-                            <span class="bs-card-icon">🌐</span>
-                            <span class="bs-card-title">SGO Norte - 24 Horas</span>
-                            <span class="bs-card-desc">Sistema de Gestión Operativa (Emergencias activas en Lima
-                                Norte).</span>
-                            <span class="bs-card-tag">Ingresar →</span>
-                        </a>
-                        <a href="https://www.bomberosperu.gob.pe/np_heroes.asp" target="_blank" class="bs-card">
-                            <span class="bs-card-icon">🎖️</span>
+                    <h4 class="code-section-title">Historia y Comunidad</h4>
+                    <div class="bs-cards-grid">
+                        <a href="https://www.bomberosperu.gob.pe/np_heroes.asp" target="_blank"
+                            rel="noopener noreferrer" class="bs-card">
                             <span class="bs-card-title">Héroes CGBVP</span>
                             <span class="bs-card-desc">Mártires y héroes caídos en servicio en la historia del
                                 cuerpo.</span>
                             <span class="bs-card-tag">Revisar →</span>
                         </a>
-                        <a href="https://www.bomberosperu.gob.pe/sgo/ceem/SGO_CEEM_CDVehiculos.asp" target="_blank"
+                        <a href="https://labombalima.blogspot.com/" target="_blank" rel="noopener noreferrer"
                             class="bs-card">
-                            <span class="bs-card-icon">🚒</span>
-                            <span class="bs-card-title">Disponibilidad de Vehículos</span>
-                            <span class="bs-card-desc">Consulta de estado operativo de las unidades móviles del
-                                CGBVP.</span>
-                            <span class="bs-card-tag">Consultar →</span>
-                        </a>
-                        <a href="https://labombalima.blogspot.com/" target="_blank" class="bs-card">
-                            <span class="bs-card-icon">📖</span>
                             <span class="bs-card-title">La Bomba Lima (Blog)</span>
                             <span class="bs-card-desc">Blog histórico y noticioso con artículos sobre la B-4 a través
                                 del tiempo.</span>
@@ -1319,7 +1868,7 @@
     <footer class="creative-footer">
         <div class="footer-container">
             <div class="footer-left">
-                <a href="https://matiascalero.github.io" class="logo-mc">mc</a>
+                <a href="/" class="logo-mc">mc</a>
                 <p>gracias, internet.</p>
 
                 <div class="social-text-links">
@@ -1341,16 +1890,7 @@
     </footer>
 
     <script>
-        // 1. Theme Logic
-        const toggle = document.getElementById('themeToggle');
-        toggle.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            const next = current === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
-
-        // 2. Mobile Menu Logic
+        // 1. Mobile Menu Logic
         const hamb = document.getElementById('hamb');
         const nav = document.getElementById('navMenu');
         hamb.addEventListener('click', () => {
@@ -1386,10 +1926,34 @@
         function switchBsTab(sectionId) {
             document.querySelectorAll('.bs-nav-btn').forEach(btn => btn.classList.remove('bs-active'));
             document.querySelectorAll('.bs-panel').forEach(panel => panel.classList.remove('bs-panel-active'));
-            const btn = document.getElementById('bstab-' + sectionId);
+
+            const mappedTabId = (sectionId === 'tarea10426' || sectionId === 'evaluacion-historia')
+                ? 'biblioteca'
+                : (sectionId === 'tool-glasgow' || sectionId === 'tool-signos' || sectionId === 'tool-conversor')
+                    ? 'herramientas'
+                    : sectionId;
+            const btn = document.getElementById('bstab-' + mappedTabId);
             const panel = document.getElementById('bspanel-' + sectionId);
-            if (btn) btn.classList.add('bs-active');
+
+            if (btn) {
+                btn.classList.add('bs-active');
+                const parentGroup = btn.closest('.bs-nav-group');
+                if (parentGroup && !parentGroup.classList.contains('bs-group-open')) {
+                    parentGroup.classList.add('bs-group-open');
+                    const toggleBtn = parentGroup.querySelector('.bs-group-toggle');
+                    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+                }
+            }
             if (panel) panel.classList.add('bs-panel-active');
+        }
+
+        // 5b. Hierarchical Sidebar Group Accordion
+        function toggleNavGroup(groupId) {
+            const group = document.getElementById(groupId);
+            if (!group) return;
+            const isOpen = group.classList.toggle('bs-group-open');
+            const toggleBtn = group.querySelector('.bs-group-toggle');
+            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         }
 
         // 6. Module accordion Logic
@@ -1402,6 +1966,7 @@
 
     <script src="bomberos-balotarios.js"></script>
     <script src="balotarios-logic.js"></script>
+    <script src="herramientas-logic.js"></script>
 
 </body>
 

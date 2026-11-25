@@ -1,0 +1,16 @@
+{
+  "name": "matias-calero-home",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web personal y hub de recursos de Matias Calero",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node --check server.js",
+    "lint": "node --check server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
