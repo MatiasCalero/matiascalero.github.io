@@ -3348,85 +3348,228 @@ header.header-vertical, .stat-card, .cycle-card, .bomberos-card, .recurso-item, 
                             min-width: 0;
                         }
 
-                        /* Compact low-text launcher for Accesos Rápidos */
-                        .bs-launcher-stack {
+                        /* Visual Bento showcase cards for Servicios, Herramientas & Biblioteca */
+                        .bs-visual-sections {
                             display: flex;
                             flex-direction: column;
-                            gap: 18px;
+                            gap: 28px;
                         }
 
-                        .bs-launcher-group {
-                            background: var(--card-bg);
-                            border: 1px solid var(--border-color);
-                            border-radius: 14px;
-                            padding: 16px 18px 18px;
-                        }
-
-                        .bs-launcher-title {
+                        .bs-visual-section-title,
+                        .bs-visual-section-title.title-dual {
                             display: block;
                             font-family: var(--font-title);
                             font-size: 0.98rem;
                             font-weight: 700;
                             letter-spacing: -0.02em;
                             color: var(--color-text);
+                            background: none;
+                            -webkit-text-fill-color: currentColor;
                             padding-bottom: 10px;
-                            margin-bottom: 12px;
+                            margin-bottom: 14px;
                             border-bottom: 1px solid var(--border-color);
                         }
 
-                        .bs-launcher-title.title-dual {
-                            display: block;
-                            background: none;
-                            -webkit-text-fill-color: currentColor;
-                            color: var(--color-text);
-                        }
-
-                        .bs-quick-grid {
+                        .bs-visual-grid {
                             display: grid;
                             grid-template-columns: repeat(2, minmax(0, 1fr));
-                            gap: 10px;
+                            gap: 16px;
                         }
 
-                        .bs-quick-link {
+                        .bs-visual-card {
+                            position: relative;
+                            display: flex;
+                            align-items: stretch;
+                            min-height: 158px;
+                            padding: 22px 24px;
+                            border-radius: 18px;
+                            text-decoration: none;
+                            overflow: hidden;
+                            isolation: isolate;
+                            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+                        }
+
+                        .bs-visual-card:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+                        }
+
+                        .bs-visual-card:focus-visible {
+                            outline: 2px solid var(--info-red);
+                            outline-offset: 3px;
+                        }
+
+                        /* Light variant (pure white surface matching pure-white 3D studio renders) */
+                        .bs-vc-light {
+                            background: #ffffff;
+                            color: #141414;
+                            border: 1px solid var(--border-color);
+                        }
+
+                        .bs-vc-light .bs-vc-sub {
+                            color: #6b6860;
+                        }
+
+                        .bs-vc-light .bs-vc-cta {
+                            color: #1a1a1a;
+                        }
+
+                        .bs-vc-light .bs-vc-cta-circle {
+                            background: #141414;
+                            color: #ffffff;
+                        }
+
+                        /* Dark variant (obsidian surface matching dark 3D studio renders) */
+                        .bs-vc-dark {
+                            background: var(--vc-dark, #111111);
+                            color: #ffffff;
+                            border: 1px solid rgba(255, 255, 255, 0.08);
+                        }
+
+                        .bs-vc-dark .bs-vc-sub {
+                            color: rgba(255, 255, 255, 0.58);
+                        }
+
+                        .bs-vc-dark .bs-vc-cta {
+                            color: rgba(255, 255, 255, 0.92);
+                        }
+
+                        .bs-vc-dark .bs-vc-cta-circle {
+                            background: #ffffff;
+                            color: #141414;
+                        }
+
+                        /* Atmospheric ember under-glow inspired by flame reference banner */
+                        .bs-vc-flame::after {
+                            content: '';
+                            position: absolute;
+                            inset: 0;
+                            background: radial-gradient(ellipse 90% 52% at 64% 112%, rgba(255, 118, 28, 0.44), rgba(209, 40, 25, 0.16) 52%, transparent 78%);
+                            pointer-events: none;
+                            z-index: 1;
+                        }
+
+                        /* Vermilion-orange accent variant matching vermilion 3D studio renders */
+                        .bs-vc-accent {
+                            background: linear-gradient(125deg, color-mix(in srgb, var(--vc-accent, #db3e11) 92%, #b02006) 0%, var(--vc-accent, #db3e11) 58%, color-mix(in srgb, var(--vc-accent, #db3e11) 88%, #ff7a29) 100%);
+                            color: #ffffff;
+                            border: 1px solid rgba(255, 255, 255, 0.12);
+                        }
+
+                        .bs-vc-accent .bs-vc-sub {
+                            color: rgba(255, 255, 255, 0.8);
+                        }
+
+                        .bs-vc-accent .bs-vc-cta {
+                            color: #ffffff;
+                        }
+
+                        .bs-vc-accent .bs-vc-cta-circle {
+                            background: #ffffff;
+                            color: var(--vc-accent, #db3e11);
+                        }
+
+                        .bs-vc-body {
+                            position: relative;
+                            z-index: 2;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            gap: 22px;
+                            width: 62%;
+                            min-width: 0;
+                        }
+
+                        .bs-vc-heading {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 4px;
+                        }
+
+                        .bs-vc-title {
+                            font-family: var(--font-title);
+                            font-size: 1.16rem;
+                            font-weight: 700;
+                            line-height: 1.18;
+                            letter-spacing: -0.02em;
+                            text-wrap: balance;
+                        }
+
+                        .bs-vc-sub {
+                            font-family: var(--font-body);
+                            font-size: 0.92rem;
+                            font-weight: 400;
+                            line-height: 1.3;
+                        }
+
+                        .bs-vc-cta {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            font-family: var(--font-body);
+                            font-size: 0.72rem;
+                            font-weight: 700;
+                            letter-spacing: 0.06em;
+                            text-transform: uppercase;
+                            white-space: nowrap;
+                        }
+
+                        .bs-vc-cta-circle {
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            flex-shrink: 0;
+                            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                        }
+
+                        .bs-visual-card:hover .bs-vc-cta-circle {
+                            transform: translate(2px, -2px);
+                        }
+
+                        .bs-vc-media {
+                            position: absolute;
+                            top: 0;
+                            right: -6px;
+                            bottom: 0;
+                            width: 47%;
                             display: flex;
                             align-items: center;
-                            justify-content: space-between;
-                            gap: 12px;
-                            padding: 12px 14px;
-                            background: var(--bg);
-                            border: 1px solid var(--border-color);
-                            border-radius: 10px;
-                            text-decoration: none;
-                            color: var(--color-text);
-                            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+                            justify-content: flex-end;
+                            pointer-events: none;
+                            z-index: 0;
+                            -webkit-mask-image: linear-gradient(to left, #000 70%, transparent 100%);
+                            mask-image: linear-gradient(to left, #000 70%, transparent 100%);
                         }
 
-                        .bs-quick-link:hover {
-                            border-color: var(--info-red);
-                            transform: translateY(-2px);
-                            box-shadow: 0 4px 12px var(--shadow);
-                        }
-
-                        .bs-quick-title {
+                        .bs-vc-media img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
                             display: block;
-                            font-size: 0.92rem;
-                            font-weight: 600;
-                            line-height: 1.25;
-                            color: var(--color-text);
+                            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
                         }
 
-                        .bs-quick-meta {
-                            display: block;
-                            font-size: 0.78rem;
-                            color: var(--color-subtext);
-                            margin-top: 2px;
+                        .bs-visual-card:hover .bs-vc-media img {
+                            transform: scale(1.06);
                         }
 
-                        .bs-quick-arrow {
-                            font-size: 0.95rem;
-                            color: var(--info-red);
-                            font-weight: 600;
-                            flex-shrink: 0;
+                        @media (prefers-color-scheme: dark) {
+                            .bs-vc-light {
+                                background: #f2eee6;
+                                border-color: rgba(255, 255, 255, 0.12);
+                            }
+
+                            .bs-vc-light .bs-vc-media img {
+                                mix-blend-mode: multiply;
+                            }
+
+                            .bs-visual-card:hover {
+                                box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+                            }
                         }
 
                         @media(max-width: 860px) {
@@ -3454,9 +3597,18 @@ header.header-vertical, .stat-card, .cycle-card, .bomberos-card, .recurso-item, 
                             }
                         }
 
-                        @media(max-width: 560px) {
-                            .bs-quick-grid {
+                        @media(max-width: 640px) {
+                            .bs-visual-grid {
                                 grid-template-columns: 1fr;
+                            }
+
+                            .bs-visual-card {
+                                min-height: 144px;
+                                padding: 18px 20px;
+                            }
+
+                            .bs-vc-body {
+                                width: 60%;
                             }
                         }
 

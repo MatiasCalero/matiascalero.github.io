@@ -80,11 +80,11 @@
                         </button>
                         <ul class="bs-nav bs-subnav" id="bsgroup-operaciones-list" role="tablist">
                             <li><button class="bs-nav-btn bs-active" onclick="switchBsTab('accesos')" id="bstab-accesos">
-                                    <span>Accesos Rápidos</span><span class="bs-nav-count">6</span></button></li>
+                                    <span>Servicios</span></button></li>
                             <li><button class="bs-nav-btn" onclick="switchBsTab('herramientas')" id="bstab-herramientas">
-                                    <span>Herramientas</span><span class="bs-nav-count">3</span></button></li>
+                                    <span>Herramientas</span></button></li>
                             <li><button class="bs-nav-btn" onclick="switchBsTab('codigos')" id="bstab-codigos">
-                                    <span>Códigos CGBVP</span><span class="bs-nav-count">144</span></button></li>
+                                    <span>Códigos CGBVP</span></button></li>
                         </ul>
                     </div>
 
@@ -97,11 +97,11 @@
                         </button>
                         <ul class="bs-nav bs-subnav" id="bsgroup-estudio-list" role="tablist">
                             <li><button class="bs-nav-btn" onclick="switchBsTab('formacion')" id="bstab-formacion">
-                                    <span>Lecciones</span><span class="bs-nav-count">34</span></button></li>
+                                    <span>Lecciones</span></button></li>
                             <li><button class="bs-nav-btn" onclick="switchBsTab('balotarios')" id="bstab-balotarios">
                                     <span>Balotarios</span></button></li>
                             <li><button class="bs-nav-btn" onclick="switchBsTab('biblioteca')" id="bstab-biblioteca">
-                                    <span>Biblioteca</span><span class="bs-nav-count">7</span></button></li>
+                                    <span>Biblioteca</span></button></li>
                         </ul>
                     </div>
                 </nav>
@@ -110,64 +110,116 @@
             <!-- CONTENT -->
             <div class="bomberos-content">
 
-                <!-- 1. Accesos Rápidos -->
+                <!-- 1. Servicios -->
                 <div class="bs-panel bs-panel-active" id="bspanel-accesos">
                     <div class="bs-panel-header">
-                        <h3>Accesos Rápidos</h3>
+                        <h3>Servicios</h3>
                         <p>Portales operativos y consultas directas en guardia.</p>
                     </div>
 
-                    <div class="bs-launcher-stack">
-                        <section class="bs-launcher-group">
-                            <h4 class="bs-launcher-title">Operaciones CGBVP</h4>
-                            <div class="bs-quick-grid">
-                                <a href="https://sgonorte.bomberosperu.gob.pe/24horas" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
-                                    <div>
-                                        <span class="bs-quick-title">Emergencias 24H</span>
-                                        <span class="bs-quick-meta">SGO Norte</span>
+                    <div class="bs-visual-sections">
+                        <section class="bs-visual-section">
+                            <h4 class="bs-visual-section-title">Operaciones CGBVP</h4>
+                            <div class="bs-visual-grid">
+                                <a href="https://sgonorte.bomberosperu.gob.pe/24horas" target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-dark bs-vc-flame" style="--vc-dark:#030303;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Emergencias 24H</span>
+                                            <span class="bs-vc-sub">SGO Norte</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Abrir portal</span>
+                                        </span>
                                     </div>
-                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/emergencias-24h.webp" alt="" loading="eager" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
                                 </a>
-                                <a href="https://www.bomberosperu.gob.pe/sgo/ceem/SGO_CEEM_CDVehiculos.asp" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
-                                    <div>
-                                        <span class="bs-quick-title">Unidades en Servicio</span>
-                                        <span class="bs-quick-meta">Disponibilidad CEEM</span>
+
+                                <a href="https://www.bomberosperu.gob.pe/sgo/ceem/SGO_CEEM_CDVehiculos.asp" target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-accent" style="--vc-accent:#e23d0c;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Unidades en Servicio</span>
+                                            <span class="bs-vc-sub">Disponibilidad CEEM</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Ver estado</span>
+                                        </span>
                                     </div>
-                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/unidades-servicio.webp?v=2" alt="" loading="eager" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
                                 </a>
                             </div>
                         </section>
 
-                        <section class="bs-launcher-group">
-                            <h4 class="bs-launcher-title">Consultas Ciudadano y Vehículo</h4>
-                            <div class="bs-quick-grid">
-                                <a href="https://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
-                                    <div>
-                                        <span class="bs-quick-title">SIS</span>
-                                        <span class="bs-quick-meta">Afiliación por DNI</span>
+                        <section class="bs-visual-section">
+                            <h4 class="bs-visual-section-title">Consultas Ciudadano y Vehículo</h4>
+                            <div class="bs-visual-grid">
+                                <a href="https://app.sis.gob.pe/SisConsultaEnLinea/Consulta/frmConsultaEnLinea.aspx" target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-light">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">SIS</span>
+                                            <span class="bs-vc-sub">Afiliación por DNI</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Consultar</span>
+                                        </span>
                                     </div>
-                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/sis.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
                                 </a>
-                                <a href="https://dondemeatiendo.essalud.gob.pe/" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
-                                    <div>
-                                        <span class="bs-quick-title">EsSalud</span>
-                                        <span class="bs-quick-meta">Dónde me atiendo</span>
+
+                                <a href="https://dondemeatiendo.essalud.gob.pe/" target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-light">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">EsSalud</span>
+                                            <span class="bs-vc-sub">Dónde me atiendo</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Consultar</span>
+                                        </span>
                                     </div>
-                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/essalud.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
                                 </a>
-                                <a href="https://www.apeseg.org.pe/consultas-soat/" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
-                                    <div>
-                                        <span class="bs-quick-title">SOAT</span>
-                                        <span class="bs-quick-meta">APESEG · Por placa</span>
+
+                                <a href="https://www.apeseg.org.pe/consultas-soat/" target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-dark" style="--vc-dark:#161714;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">SOAT</span>
+                                            <span class="bs-vc-sub">APESEG · Por placa</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Consultar</span>
+                                        </span>
                                     </div>
-                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/soat.webp?v=2" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
                                 </a>
-                                <a href="https://consultavehicular.sunarp.gob.pe/" target="_blank" rel="noopener noreferrer" class="bs-quick-link">
-                                    <div>
-                                        <span class="bs-quick-title">Consulta Vehicular</span>
-                                        <span class="bs-quick-meta">SUNARP · Por placa</span>
+
+                                <a href="https://consultavehicular.sunarp.gob.pe/" target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-accent" style="--vc-accent:#dc3e16;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Consulta Vehicular</span>
+                                            <span class="bs-vc-sub">SUNARP · Por placa</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Consultar</span>
+                                        </span>
                                     </div>
-                                    <span class="bs-quick-arrow" aria-hidden="true">→</span>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/consulta-vehicular.webp?v=2" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
                                 </a>
                             </div>
                         </section>
@@ -180,21 +232,53 @@
                         <h3>Herramientas</h3>
                         <p>Utilidades prácticas de apoyo para guardia, atención prehospitalaria y cálculo rápido.</p>
                     </div>
-                    <div class="bs-cards-grid">
-                        <a href="#" class="bs-card" onclick="switchBsTab('tool-glasgow'); return false;">
-                            <span class="bs-card-title">Escala de Glasgow</span>
-                            <span class="bs-card-desc">Evaluación del nivel de consciencia: respuesta ocular, verbal y motora con acciones sugeridas.</span>
-                            <span class="bs-card-tag">Abrir →</span>
+                    <div class="bs-visual-grid">
+                        <a href="#" class="bs-visual-card bs-vc-dark" style="--vc-dark:#131313;" onclick="switchBsTab('tool-glasgow'); return false;">
+                            <div class="bs-vc-body">
+                                <div class="bs-vc-heading">
+                                    <span class="bs-vc-title">Escala de Glasgow</span>
+                                    <span class="bs-vc-sub">Nivel de consciencia</span>
+                                </div>
+                                <span class="bs-vc-cta">
+                                    <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                    <span>Abrir</span>
+                                </span>
+                            </div>
+                            <div class="bs-vc-media" aria-hidden="true">
+                                <img src="/images/cards/glasgow.webp?v=2" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            </div>
                         </a>
-                        <a href="#" class="bs-card" onclick="switchBsTab('tool-signos'); return false;">
-                            <span class="bs-card-title">Signos Vitales</span>
-                            <span class="bs-card-desc">Valores de referencia por grupo etario clasificados en normal, urgencia y emergencia.</span>
-                            <span class="bs-card-tag">Abrir →</span>
+
+                        <a href="#" class="bs-visual-card bs-vc-accent" style="--vc-accent:#d2370e;" onclick="switchBsTab('tool-signos'); return false;">
+                            <div class="bs-vc-body">
+                                <div class="bs-vc-heading">
+                                    <span class="bs-vc-title">Signos Vitales</span>
+                                    <span class="bs-vc-sub">Referencia por edad</span>
+                                </div>
+                                <span class="bs-vc-cta">
+                                    <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                    <span>Abrir</span>
+                                </span>
+                            </div>
+                            <div class="bs-vc-media" aria-hidden="true">
+                                <img src="/images/cards/signos-vitales.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            </div>
                         </a>
-                        <a href="#" class="bs-card" onclick="switchBsTab('tool-conversor'); return false;">
-                            <span class="bs-card-title">Conversor de Unidades</span>
-                            <span class="bs-card-desc">Presión, distancia, área, volumen, peso, fuerza, temperatura, caudal y duración de oxígeno.</span>
-                            <span class="bs-card-tag">Abrir →</span>
+
+                        <a href="#" class="bs-visual-card bs-vc-light" onclick="switchBsTab('tool-conversor'); return false;">
+                            <div class="bs-vc-body">
+                                <div class="bs-vc-heading">
+                                    <span class="bs-vc-title">Conversor de Unidades</span>
+                                    <span class="bs-vc-sub">Cálculos y oxígeno</span>
+                                </div>
+                                <span class="bs-vc-cta">
+                                    <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                    <span>Abrir</span>
+                                </span>
+                            </div>
+                            <div class="bs-vc-media" aria-hidden="true">
+                                <img src="/images/cards/conversor.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1410,60 +1494,138 @@
                         <p>Manuales oficiales, apuntes de clase y referencias históricas del CGBVP.</p>
                     </div>
 
-                    <h4 class="code-section-title">Manuales Oficiales</h4>
-                    <div class="bs-cards-grid bs-section-grid">
-                        <a href="https://drive.google.com/drive/folders/12UJdPaLAI5D_zFYHTjgWAapeDpp5axKi?usp=sharing"
-                            target="_blank" rel="noopener noreferrer" class="bs-card">
-                            <span class="bs-card-title">IFSTA</span>
-                            <span class="bs-card-desc">Manuales del International Fire Service Training Association
-                                en español.</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                        <a href="https://drive.google.com/file/d/1ETg4hJmkC6SMaYBM1DoKE8-0HsEpmmsH/view?usp=sharing"
-                            target="_blank" rel="noopener noreferrer" class="bs-card">
-                            <span class="bs-card-title">Manual ESBAS 2021</span>
-                            <span class="bs-card-desc">Manual Completo</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                        <a href="https://drive.google.com/drive/folders/1_6Mf97NMrJJB3zZbekQY8ttTrhe6glbj?usp=sharing"
-                            target="_blank" rel="noopener noreferrer" class="bs-card">
-                            <span class="bs-card-title">Manual ESBAS 2026</span>
-                            <span class="bs-card-desc">Por Módulos</span>
-                            <span class="bs-card-tag">Ver →</span>
-                        </a>
-                    </div>
+                    <div class="bs-visual-sections">
+                        <section class="bs-visual-section">
+                            <h4 class="bs-visual-section-title">Manuales Oficiales</h4>
+                            <div class="bs-visual-grid">
+                                <a href="https://drive.google.com/drive/folders/12UJdPaLAI5D_zFYHTjgWAapeDpp5axKi?usp=sharing"
+                                    target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-light">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">IFSTA</span>
+                                            <span class="bs-vc-sub">Manuales en español</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Ver manuales</span>
+                                        </span>
+                                    </div>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/ifsta.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
+                                </a>
 
-                    <h4 class="code-section-title">Apuntes y Evaluaciones</h4>
-                    <div class="bs-cards-grid bs-section-grid">
-                        <a href="#" class="bs-card" onclick="switchBsTab('evaluacion-historia'); return false;">
-                            <span class="bs-card-title">Evaluación Historia CGBVP 15/11/26</span>
-                            <span class="bs-card-desc">Preguntas y respuestas clave: historia institucional, mártires, lema, héroes y escalafón del CGBVP.</span>
-                            <span class="bs-card-tag">Leer →</span>
-                        </a>
-                        <a href="#" class="bs-card" onclick="switchBsTab('tarea10426'); return false;">
-                            <span class="bs-card-title">Tarea 1/04/26</span>
-                            <span class="bs-card-desc">Apuntes de estudio: Información de la bomba, EPP, Himno y
-                                más.</span>
-                            <span class="bs-card-tag">Leer →</span>
-                        </a>
-                    </div>
+                                <a href="https://drive.google.com/file/d/1ETg4hJmkC6SMaYBM1DoKE8-0HsEpmmsH/view?usp=sharing"
+                                    target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-dark" style="--vc-dark:#111111;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Manual ESBAS 2021</span>
+                                            <span class="bs-vc-sub">Manual completo</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Ver PDF</span>
+                                        </span>
+                                    </div>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/esbas-2021.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
+                                </a>
 
-                    <h4 class="code-section-title">Historia y Comunidad</h4>
-                    <div class="bs-cards-grid">
-                        <a href="https://www.bomberosperu.gob.pe/np_heroes.asp" target="_blank"
-                            rel="noopener noreferrer" class="bs-card">
-                            <span class="bs-card-title">Héroes CGBVP</span>
-                            <span class="bs-card-desc">Mártires y héroes caídos en servicio en la historia del
-                                cuerpo.</span>
-                            <span class="bs-card-tag">Revisar →</span>
-                        </a>
-                        <a href="https://labombalima.blogspot.com/" target="_blank" rel="noopener noreferrer"
-                            class="bs-card">
-                            <span class="bs-card-title">La Bomba Lima (Blog)</span>
-                            <span class="bs-card-desc">Blog histórico y noticioso con artículos sobre la B-4 a través
-                                del tiempo.</span>
-                            <span class="bs-card-tag">Leer →</span>
-                        </a>
+                                <a href="https://drive.google.com/drive/folders/1_6Mf97NMrJJB3zZbekQY8ttTrhe6glbj?usp=sharing"
+                                    target="_blank" rel="noopener noreferrer" class="bs-visual-card bs-vc-accent" style="--vc-accent:#de4116;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Manual ESBAS 2026</span>
+                                            <span class="bs-vc-sub">Por módulos</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Ver módulos</span>
+                                        </span>
+                                    </div>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/esbas-2026.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="bs-visual-section">
+                            <h4 class="bs-visual-section-title">Apuntes y Evaluaciones</h4>
+                            <div class="bs-visual-grid">
+                                <a href="#" class="bs-visual-card bs-vc-light" onclick="switchBsTab('evaluacion-historia'); return false;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Evaluación Historia</span>
+                                            <span class="bs-vc-sub">CGBVP · 15/11/26</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Leer</span>
+                                        </span>
+                                    </div>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/evaluacion-historia.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
+                                </a>
+
+                                <a href="#" class="bs-visual-card bs-vc-dark" style="--vc-dark:#131311;" onclick="switchBsTab('tarea10426'); return false;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Tarea 1/04/26</span>
+                                            <span class="bs-vc-sub">Bomba, EPP e Himno</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Leer</span>
+                                        </span>
+                                    </div>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/tarea-apuntes.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="bs-visual-section">
+                            <h4 class="bs-visual-section-title">Historia y Comunidad</h4>
+                            <div class="bs-visual-grid">
+                                <a href="https://www.bomberosperu.gob.pe/np_heroes.asp" target="_blank"
+                                    rel="noopener noreferrer" class="bs-visual-card bs-vc-accent" style="--vc-accent:#e04016;">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">Héroes CGBVP</span>
+                                            <span class="bs-vc-sub">Mártires y caídos</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Revisar</span>
+                                        </span>
+                                    </div>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/heroes-cgbvp.webp" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
+                                </a>
+
+                                <a href="https://labombalima.blogspot.com/" target="_blank" rel="noopener noreferrer"
+                                    class="bs-visual-card bs-vc-light">
+                                    <div class="bs-vc-body">
+                                        <div class="bs-vc-heading">
+                                            <span class="bs-vc-title">La Bomba Lima</span>
+                                            <span class="bs-vc-sub">Blog histórico B-4</span>
+                                        </div>
+                                        <span class="bs-vc-cta">
+                                            <span class="bs-vc-cta-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></span>
+                                            <span>Leer blog</span>
+                                        </span>
+                                    </div>
+                                    <div class="bs-vc-media" aria-hidden="true">
+                                        <img src="/images/cards/bomba-lima.webp?v=2" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
                     </div>
                 </div>
 
